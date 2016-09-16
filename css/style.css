@@ -1,0 +1,349 @@
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font-weight: normal;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+article, aside, figure, footer, header, nav, section, details, summary {display: block;}
+
+/* Handle box-sizing while better addressing child elements:
+   http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+/* consider resetting the default cursor: https://gist.github.com/murtaugh/5247154 */
+
+/* Responsive images and other embedded objects */
+/* if you don't have full control over `img` tags (if you have to overcome attributes), consider adding height: auto */
+img,
+object,
+embed {max-width: 100%;}
+
+/*
+   Note: keeping IMG here will cause problems if you're using foreground images as sprites.
+	In fact, it *will* cause problems with Google Maps' controls at small size.
+	If this is the case for you, try uncommenting the following:
+#map img {
+		max-width: none;
+}
+*/
+
+/* force a vertical scrollbar to prevent a jumpy page */
+html {overflow-y: scroll;}
+
+/* we use a lot of ULs that aren't bulleted.
+	you'll have to restore the bullets within content,
+	which is fine because they're probably customized anyway */
+ul {list-style: none;}
+
+blockquote, q {quotes: none;}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {content: ''; content: none;}
+
+a {margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent;}
+
+del {text-decoration: line-through;}
+
+abbr[title], dfn[title] {border-bottom: 1px dotted #000; cursor: help;}
+
+/* tables still need cellspacing="0" in the markup */
+table {border-collapse: separate; border-spacing: 0;}
+th {font-weight: bold; vertical-align: bottom;}
+td {font-weight: normal; vertical-align: top;}
+
+hr {display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0;}
+
+input, select {vertical-align: middle;}
+
+pre {
+    white-space: pre; /* CSS2 */
+    white-space: pre-wrap; /* CSS 2.1 */
+    white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+    word-wrap: break-word; /* IE */
+}
+
+input[type="radio"] {vertical-align: text-bottom;}
+input[type="checkbox"] {vertical-align: bottom;}
+.ie7 input[type="checkbox"] {vertical-align: baseline;}
+.ie6 input {vertical-align: text-bottom;}
+
+select, input, textarea {font: 99% sans-serif;}
+
+table {font-size: inherit; font: 100%;}
+
+small {font-size: 85%;}
+
+strong {font-weight: bold;}
+
+td, td img {vertical-align: top;}
+
+/* Make sure sup and sub don't mess with your line-heights http://gist.github.com/413930 */
+sub, sup {font-size: 75%; line-height: 0; position: relative;}
+sup {top: -0.5em;}
+sub {bottom: -0.25em;}
+
+/* standardize any monospaced elements */
+pre, code, kbd, samp {font-family: monospace, sans-serif;}
+
+/* hand cursor on clickable elements */
+.clickable,
+label,
+input[type=button],
+input[type=submit],
+input[type=file],
+button {cursor: pointer;}
+
+/* Webkit browsers add a 2px margin outside the chrome of form elements */
+button, input, select, textarea {margin: 0;}
+
+/* make buttons play nice in IE */
+button,
+input[type=button] {width: auto; overflow: visible;}
+
+/* scale images in IE7 more attractively */
+.ie7 img {-ms-interpolation-mode: bicubic;}
+
+/* prevent BG image flicker upon hover
+   (commented out as usage is rare, and the filter syntax messes with some pre-processors)
+.ie6 html {filter: expression(document.execCommand("BackgroundImageCache", false, true));}
+*/
+
+/* let's clear some floats */
+.clearfix:after { content: " "; display: block; clear: both; }
+/* moj kod ten */
+body{
+    font-family: 'Raleway', sans-serif;
+	font-size:12px;
+}
+a{
+		text-decoration:none;
+
+}
+.main_width{
+	width:1056px;
+	margin:0 auto;
+}
+.top{
+	background:#000;
+	height:40px;
+	padding-top:14px;
+}
+ a.logo{
+	color:#fff;
+	display:block;
+	float:left;
+}
+span.on{
+	color:#27c7ab;
+	font-weight:bold;
+}
+.firstul{
+	float:right;
+	position:relative;
+}
+nav.first li{
+	display:inline;
+	margin:0 20px;
+
+}
+.fist::after{
+	content="";
+	display:block;
+	clear:both;
+}
+.firstul a{
+	color:#fff;
+	font-weight:bold;
+}
+ul.secondul{
+	position:absolute;
+	top:30px;
+	background:#000;
+	padding-bottom:10px;
+}
+ul.secondul li{
+	display:block;
+	margin:0;
+	padding:0;
+	margin:10px 20px 0 20px;
+}
+ul.secondul li a{
+	font-weight:400;
+}
+.slider{
+	height:500px;
+	width:100%;
+	background: rgba(255,255,255,1);
+	background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 22%, rgba(245,245,245,1) 65%, rgba(237,237,237,1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(22%, rgba(255,255,255,1)), color-stop(65%, rgba(245,245,245,1)), color-stop(100%, rgba(237,237,237,1)));
+	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 22%, rgba(245,245,245,1) 65%, rgba(237,237,237,1) 100%);
+	background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 22%, rgba(245,245,245,1) 65%, rgba(237,237,237,1) 100%);
+	background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 22%, rgba(245,245,245,1) 65%, rgba(237,237,237,1) 100%);
+	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 22%, rgba(245,245,245,1) 65%, rgba(237,237,237,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=0 );
+}
+.slider_content{
+	height:346px;
+	margin-top:180px;
+
+
+}
+.slider_content img{
+	width: 51%;
+	float: left;
+
+}
+a.strzalka {
+    font-size: 40px;
+    color: #27c7ab;
+    display: block;
+    float: left;
+    width: 5%;
+    text-align: center;
+    padding-top: 10%;
+}
+.slider_third{
+	width:429px;
+	height:200px;
+	width: 39%;
+	float:left;
+	margin-top:50px;
+	text-align: center;
+}
+.slider_third h2{
+	text-transform: uppercase;
+	font-size:32px;
+	font-weight:bold;
+}
+.slider_third p{
+	text-align:center;
+	margin-top:25px;
+	font-size:14px;
+	line-height: 1.8;
+}
+.slider_third button{
+	width:260px;
+	height:52px;
+	background:#27c7ab;
+	border-radius:3%;
+	border:none;
+	margin-top:25px;
+}
+.slider_third button a{
+	text-transform: uppercase;
+	color:#fff;
+	font-size:20px;
+
+}
+
+
+
+
+.slider_content::after{
+	content:"";
+	clear:both;
+	display:block;
+}
+
+.main_content{
+	background:#fff;
+	height:350px;
+	padding-top:30px;
+	margin-bottom:60px;
+}
+.box_first{
+	float:left;
+	width:30%;
+	position:relative;
+}
+.box_second{
+	float:left;
+	width:30%;
+	margin-left:5%;
+	position:relative;
+}
+.box_third{
+	width:30%;
+	border:1px solid #cacaca;
+	float:right;
+	margin-left:5%;
+}
+p.transparent{
+	display:block;
+	height:60px;
+	width:331px;
+	background:rgba(255, 255, 255, 0.3);
+	position:absolute;bottom:20px;
+	padding-left:15px;
+	padding-top:15px;
+}
+a.podkreslenie{
+	display:inline-block;
+	width:140px;
+	border-bottom:5px solid #27c7ab;
+	color:#000;
+	font-weight:bold;
+	font-size:14px;
+
+}
+.main_content_boxes::after{
+	content:"";
+	clear:both;
+	display:block;
+}
+.box_third{
+	padding:24px;
+}
+.box_third p{
+	line-height:1.8;
+	font-size:14px;
+	margin-top:10px;
+}
+
+.cennik{
+	background:#ececec;
+	height:700px;
+	padding-top:30px;
+
+}
+h3.dol{
+	display:block;
+	width:260px;
+	border-bottom:5px solid #27c7ab;
+	color:#574f4f;
+	font-weight:bold;
+	font-size:18px;
+	text-transform: uppercase;
+
+}
+.one_third{
+	height:500px;
+	width:30%;
+	float:left;
+	margin-right:3.33%;
+	border:1px solid #cacaca;
+	margin-top:60px;
+}
+.cennik_boxes::after{
+	content:"";
+	clear:both;
+	display:block;
+}
+.kontakt{
+	background:#fff;
+	padding-top:30px;
+}

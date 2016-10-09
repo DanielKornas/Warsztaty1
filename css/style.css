@@ -1,199 +1,3 @@
-html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font-weight: normal;
-    vertical-align: baseline;
-    background: transparent;
-}
-
-article, aside, figure, footer, header, nav, section, details, summary {
-    display: block;
-}
-
-
-/* Handle box-sizing while better addressing child elements:
-   http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-
-html {
-    box-sizing: border-box;
-}
-
-*, *:before, *:after {
-    box-sizing: inherit;
-}
-
-
-/* consider resetting the default cursor: https://gist.github.com/murtaugh/5247154 */
-
-
-/* Responsive images and other embedded objects */
-
-
-/* if you don't have full control over `img` tags (if you have to overcome attributes), consider adding height: auto */
-
-img, object, embed {
-    max-width: 100%;
-}
-
-
-/*
-   Note: keeping IMG here will cause problems if you're using foreground images as sprites.
-	In fact, it *will* cause problems with Google Maps' controls at small size.
-	If this is the case for you, try uncommenting the following:
-#map img {
-		max-width: none;
-}
-*/
-
-
-/* force a vertical scrollbar to prevent a jumpy page */
-
-html {
-    overflow-y: scroll;
-}
-
-
-/* we use a lot of ULs that aren't bulleted.
-	you'll have to restore the bullets within content,
-	which is fine because they're probably customized anyway */
-
-ul {
-    list-style: none;
-}
-
-blockquote, q {
-    quotes: none;
-}
-
-blockquote:before, blockquote:after, q:before, q:after {
-    content: '';
-    content: none;
-}
-
-a {
-    margin: 0;
-    padding: 0;
-    font-size: 100%;
-    vertical-align: baseline;
-    background: transparent;
-}
-
-del {
-    text-decoration: line-through;
-}
-
-abbr[title], dfn[title] {
-    border-bottom: 1px dotted #000;
-    cursor: help;
-}
-
-
-/* tables still need cellspacing="0" in the markup */
-
-table {
-    border-collapse: separate;
-    border-spacing: 0;
-}
-
-th {
-    font-weight: bold;
-    vertical-align: bottom;
-}
-
-td {
-    font-weight: normal;
-    vertical-align: top;
-}
-
-hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
-}
-
-pre {
-    white-space: pre;
-    /* CSS2 */
-    white-space: pre-wrap;
-    /* CSS 2.1 */
-    white-space: pre-line;
-    /* CSS 3 (and 2.1 as well, actually) */
-    word-wrap: break-word;
-    /* IE */
-}
-
-
-/* Make sure sup and sub don't mess with your line-heights http://gist.github.com/413930 */
-
-sub, sup {
-    font-size: 75%;
-    line-height: 0;
-    position: relative;
-}
-
-sup {
-    top: -0.5em;
-}
-
-sub {
-    bottom: -0.25em;
-}
-
-
-/* standardize any monospaced elements */
-
-
-/* hand cursor on clickable elements */
-
-.clickable, label, input[type=button], input[type=submit], input[type=file], button {
-    cursor: pointer;
-}
-
-
-/* Webkit browsers add a 2px margin outside the chrome of form elements */
-
-button, input, select, textarea {
-    margin: 0;
-}
-
-
-/* make buttons play nice in IE */
-
-button, input[type=button] {
-    width: auto;
-    overflow: visible;
-}
-
-
-/* scale images in IE7 more attractively */
-
-.ie7 img {
-    -ms-interpolation-mode: bicubic;
-}
-
-
-/* prevent BG image flicker upon hover
-   (commented out as usage is rare, and the filter syntax messes with some pre-processors)
-.ie6 html {filter: expression(document.execCommand("BackgroundImageCache", false, true));}
-*/
-
-
-/* let's clear some floats */
-
-.clearfix:after {
-    content: " ";
-    display: block;
-    clear: both;
-}
-
-
-/* moj kod ten */
-
 body {
     font-family: 'Raleway', sans-serif;
     font-size: 12px;
@@ -228,6 +32,7 @@ span.on {
 .firstul {
     float: right;
     position: relative;
+
 }
 
 nav.first li {
@@ -249,9 +54,11 @@ nav.first li {
 
 ul.secondul {
     position: absolute;
-    top: 30px;
+    top: 15px;
     background: #000;
     padding-bottom: 10px;
+    display:none;
+    padding-top:15px;
 }
 
 ul.secondul li {
@@ -265,7 +72,9 @@ ul.secondul li {
 ul.secondul li a {
     font-weight: 400;
 }
-
+ul.menu-show{
+    display:block;
+}
 .slider {
     height: 500px;
     width: 100%;
@@ -289,7 +98,7 @@ ul.secondul li a {
     float: left;
 }
 
-a.strzalka {
+a.slider_click {
     font-size: 40px;
     color: #27c7ab;
     display: block;
@@ -514,11 +323,9 @@ h3.dol {
     padding-top: 15px;
 }
 
-li:nth-of-type(2n) {
+li.product-show{
     background: #e4e4e4;
-    color: #999999;
 }
-
 .one_third li:nth-of-type(2n+1) {
     background: #f1f1f1;
     color: #777;
@@ -626,6 +433,7 @@ li:nth-of-type(2n) {
     width: 350px;
     font-size: 17px;
     position: relative;
+
 }
 
 label span {
@@ -640,7 +448,9 @@ label span {
     height: 30px;
     position: absolute;
     top: 6px;
+
 }
+
 
 .submit {
     width: 285px;
@@ -683,4 +493,250 @@ label span {
 .copy span {
     font-size: 16px;
     padding-left: 20px;
+}
+
+p.transparent-hide{
+    display:none;
+    height:0px;
+}
+
+/* css kalkulatora, gotowy z coderslab */
+.application {
+  background-color: #f9f9f9;
+text-align:center;
+}
+.application h3 {
+  color: #575757;
+  font-size: 16px;
+}
+
+.application header.align_right{
+  text-align: right;
+}
+
+
+.inline {
+  display:inline-block;
+  width:300px;
+  padding:14px;
+  vertical-align: top;
+}
+
+
+.form {
+  margin-top:50px;
+}
+.drop_down_list {
+  border:1px solid #8de0d2;
+  width: 280px;
+  height:38px;
+  background-color: white;
+  margin-top:22px;
+  padding: 8px 12px;
+  position: relative;
+}
+
+.list_label {
+  font-size: 20px;
+  color: #e2e2e2;
+  font-family: 'ralewaylight', Arial, Tahoma, sans-serif;
+}
+
+
+.checkbox {
+  position: relative;
+  padding: 30px 30px 30px 0;
+  display:none;
+}
+.transport-visible{
+    display:block;
+}
+.checkbox input {
+  display: block;
+  opacity: 0;
+  height: 48px;
+  position: absolute;
+  width: 48px;
+  cursor: pointer;
+
+}
+
+.checkbox label {
+  display: block;
+  padding-left: 65px;
+  position: relative;
+  font-size: 20px;
+  color: #cecece;
+  line-height: 120%;
+  padding-top: 10px;
+  cursor: pointer;
+}
+
+.checkbox label::before, .checkbox label::after {
+  border: 1px solid #27c7ab;
+  content: "";
+  display: block;
+  left: 0;
+  height: 48px;
+  position: absolute;
+  width: 48px;
+  top: 0;
+}
+.checkbox label::after {
+  background: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20preserveAspectRatio%3D%22xMidYMid%22%20width%3D%2233.875%22%20height%3D%2233%22%20viewBox%3D%220%200%2033.875%2033%22%3E%0A%20%20%3Cpath%20d%3D%22M9.470%2C15.209%20L14.061%2C24.104%20C14.061%2C24.104%2021.522%2C6.026%2033.287%2C-0.000%20C33.000%2C4.304%2031.852%2C8.035%2033.861%2C12.626%20C28.696%2C13.774%2018.078%2C26.687%2014.635%2C33.000%20C9.756%2C26.974%204.017%2C22.382%20-0.000%2C20.948%20L9.470%2C15.209%20Z%22%20fill%3D%22%2327c7ab%22/%3E%0A%3C/svg%3E%0A") no-repeat center;
+  border: 0;
+  display: none;
+}
+
+.checkbox input:checked + label::after {
+  display: block;
+}
+
+
+.active {
+  background: url('images/form_ok.jpg');
+  width: 48px;
+  height: 40px;
+
+}
+.inline_text {
+  display: inline-block;
+  width: 228px;
+  vertical-align: top;
+  margin-top: 30px;
+  margin-left: 15px;
+  color: #aeaeae;
+}
+.image_part img{
+  margin-top: 110px;
+  margin-left: 38px;
+}
+
+
+.application .green_bell {
+  background-color: #24baa0;
+  width: 200px;
+  height: 6px;
+  display: inline-block;
+  margin: 5px 0 5px 0;
+}
+
+.summary_panel {
+  background-color: white;
+  width:100%;
+  height:195px;
+  padding:10px;
+  margin-top: 50px;
+
+}
+
+.application .green_button {
+  background-color: #27c7ab;
+  color: white;
+  text-align:center;
+  text-transform: uppercase;
+  width: 200px;
+  padding: 10px 30px;
+  font-size: 20px;
+  display: inline-block;
+  font-family: 'ralewaymedium', Arial, Tahoma, sans-serif;
+  margin-top: 20px;
+  margin-left: 29px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+.panel_left {
+  display: inline-block;
+  width: 50%;
+  vertical-align: top;
+  padding-bottom:10px;
+  border-bottom:1px solid #e7e7e7;
+  height: 135px;
+}
+
+.panel_right {
+  display: inline-block;
+  width: 40%;
+  border-left:1px solid #e7e7e7;
+  text-align: right;
+  vertical-align: top;
+  padding-bottom:10px;
+  border-bottom:1px solid #e7e7e7;
+  height: 135px;
+}
+
+.panel_left h4 , .panel_right h4{
+  color: #24baa0;
+  font-size: 20px;
+}
+
+.panel_left span{
+  margin-top:10px;
+  font-size: 20px;
+  color: #5b5a5a;
+  display: block;
+}
+
+.panel_right span {
+  display: block;
+  font-size: 22px;
+  color: #24baa0;
+  margin-top:10px;
+}
+.sum_label{
+  display: inline-block;
+  width: 185px;
+  margin-top: 10px;
+  font-size: 20px;
+  color: #5b5a5a;
+}
+
+.sum {
+  display: inline-block;
+  width: 100px;
+  text-align: right;
+  margin-top: 10px;
+  font-size: 22px;
+  color: #24baa0;
+}
+
+.list_arrow {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid #24baa0;
+  display:block;
+  position: absolute;
+  right: 14px;
+  top: 20px;
+  cursor: pointer;
+}
+
+.list_panel {
+  background-color: white;
+  border: 1px solid #ccc;
+  width: 288px;
+  padding-left: 15px;
+  padding-bottom: 10px;
+  list-style: none;
+  margin: 0;
+  left: 0px;
+  z-index: 2;
+  position: absolute;
+  top: 54px;
+  display:none;
+}
+.list_panel li {
+  margin-top:5px;
+  cursor: pointer;
+  color: #585858;
+}
+
+.title {
+  height: 30px;
+}
+/*dodajemy widocznosc dla listy po kliknieciu  w dana strzalke */
+.list_panel_visible{
+      display:block;
 }

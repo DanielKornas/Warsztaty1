@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Warsztaty1</title>
 </head>
@@ -14,8 +15,8 @@
         <nav class="first main_width">
             <a href="#" class="logo">SIT <span class="on">ON</span> CHAIR</a>
             <ul class="firstul">
-                <li><a href="#">O FIRMIE</a>
-                    <ul class="secondul">
+                <li id="menuSwitch"><a href="#">O FIRMIE</a>
+                    <ul class="secondul" id="menuSwitch2">
                         <li><a href="#">Aktualności</a></li>
                         <li><a href="#">Nasz team</a></li>
                         <li><a href="#">Historia</a></li>
@@ -28,15 +29,15 @@
     </div>
     <div class="slider">
         <section class="slider_content main_width">
-            <a href="#" class="strzalka">
+            <a href="#" class="slider_click">
                 <</a>
-                    <img src="images/chair1.png" alt="">
+                    <img src="images/chair1.png" alt="" id="img-slider">
                     <div class="slider_third">
                         <h2>Sit <span class="on">on</span> our <span class="on">chair</span></h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget mauris bibendum, mattis ante id, rhoncus massa. Donec nunc enim, efficitur sit amet mi et, rutrum malesuada mauris.</p>
                         <button><a href="#">Zobacz więcej</a></button>
                     </div>
-                    <a href="#" class="strzalka">></a>
+                    <a href="#" class="slider_click">></a>
         </section>
     </div>
     <div class="main_content">
@@ -121,7 +122,82 @@
             </div>
         </section>
     </div>
+    <section class="application ">
+<div class="main_width">
+    <section class="choice_part inline">
+        <header>
+            <h3>SKOMPONUJ SWOJE KRZESŁO</h3>
+            <span class="green_bell"></span>
+        </header>
+
+        <div class="form">
+            <div class="drop_down_list">
+                <span class="list_label">Wybierz rodzaj</span>
+                <span class="list_arrow"></span>
+                <ul class="list_panel" id="list_panel_1">
+                    <li data-product="Clair" data-price="200">Clair</li>
+                    <li data-product="Margarita" data-price="100">Margarita</li>
+                    <li data-product="Selena" data-price="300">Selena</li>
+                </ul>
+            </div>
+            <div class="drop_down_list">
+                <span class="list_label">Wybierz kolor</span>
+                <span class="list_arrow"></span>
+                <ul class="list_panel">
+                    <li data-color="Czerwony" >Czerwony</li>
+                    <li data-color="Czarny" >Czarny</li>
+                    <li data-color="Pomarańczowy" >Pomarańczowy</li>
+                </ul>
+            </div>
+            <div class="drop_down_list">
+                <span class="list_label">Wybierz materiał</span>
+                <span class="list_arrow"></span>
+                <ul class="list_panel">
+                    <li data-material="Tkanina">Tkanina</li>
+                    <li data-material="Skóra">Skóra</li>
+                </ul>
+            </div>
+            <div class="checkbox check-box">
+                <input type="checkbox" id="transport" data-transport-price="200">
+                <label for="transport">Transport</label>
+            </div>
+            <!--<div class="checkbox"></div>-->
+            <!--<span class="list_label inline_text">Transport</span>-->
+        </div>
+    </section>
+
+    <section class="image_part inline">
+        <img src="images/red_chair.png">
+    </section>
+
+    <section class="summary_part inline">
+        <header class="align_right">
+            <h3>PODSUMOWANIE</h3>
+            <span class="green_bell"></span>
+        </header>
+
+        <div class="summary_panel">
+            <div class="panel_left">
+                <h4 class="title">Twój fotel</h4>
+                <span class="color"></span>
+                <span class="pattern"></span>
+                <span class="transport"></span>
+            </div>
+            <div class="panel_right">
+                <h4 class="title value"></h4>
+                <span class="color value"></span>
+                <span class="pattern value"></span>
+                <span class="transport value"></span>
+            </div>
+            <div class="sum_label">SUMA<div class="sum"><strong id="sum_value"></strong></div></div>
+
+        </div>
+        <a href="" class="green_button">Zamawiam</a>
+    </section>
+</div>
+</section>
     <div class="kontakt">
+
         <footer class="main_width">
             <h3 class="dol">Kontakt</h3>
             <div class="footer_form">
@@ -133,7 +209,7 @@
                     </div>
                     <div class="footer_form_right">
                         <img src="images/1.png">
-                        <label><input type="checkbox" name="checkbox" class="chcbx"><span>Zgadzam się na przetwarzanie<br> danych osobowych</span></label>
+                        <label><input type="checkbox" name="checkbox" class="chcbx"><span></span><span class="bottom-txt">Zgadzam się na przetwarzanie<br> danych osobowych</span></label>
                         <input type="submit" value="Wyślij" class="submit">
                     </div>
                 </form>
@@ -149,6 +225,7 @@
             </div>
         </footer>
     </div>
+<script src="js/script.js"></script>
 </body>
 
 </html>

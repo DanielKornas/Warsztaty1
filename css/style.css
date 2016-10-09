@@ -42,7 +42,7 @@ nav.first li {
 }
 
 .fist::after {
-    content="";
+    content:"";
     display: block;
     clear: both;
 }
